@@ -1,0 +1,20 @@
+Посмотрите на код, и подумайте сколько разных типов исключений вы тут сможете получить?
+
+public static int sum2d(String[][] arr){
+    int sum = 0;
+    for (int i = 0; i < arr.length; i++) {
+        for (int j = 0; j < 5; j++) {
+            int val = Integer.parseInt(arr[i][j]);
+            sum += val;
+        }
+    }
+}
+
+
+1.NullPointerException: Если arr равен null, то программа выбросит это исключение при первом обращении к arr.length.
+
+2.NumberFormatException: Если элемент в массиве arr не может быть преобразован в целое число, при вызове метода Integer.parseInt.
+
+3.ArrayIndexOutOfBoundsException: Если arr содержит меньше пяти столбцов, программа выбросит это исключение при попытке обратиться к arr[i][j] с j > 4.
+
+4.IndexOutOfBoundsException: Если arr содержит меньше i + 1 строк, программа выбросит это исключение при попытке обратиться к arr[i][j].
